@@ -31,16 +31,16 @@ export function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-[min(72dvh,36rem)] min-h-[26rem] overflow-hidden sm:h-[100dvh] sm:min-h-0">
-      {/* Background slides — fixed full-viewport layers for stable height */}
-      <div className="absolute inset-0 h-full w-full">
+    <section className="relative h-[min(78dvh,38rem)] min-h-[28rem] sm:h-[100dvh] sm:min-h-0">
+      {/* Background slides */}
+      <div className="absolute inset-0 overflow-hidden">
         {heroSlides.map((item, index) => (
           <div
             key={item.id}
             aria-hidden={index !== current}
             className={cn(
-              "absolute inset-0 h-full w-full",
-              index === current ? "z-10 opacity-100" : "z-0 opacity-0"
+              "absolute inset-0 h-full w-full transition-opacity duration-500",
+              index === current ? "opacity-100" : "opacity-0"
             )}
           >
             <Image
@@ -54,42 +54,43 @@ export function HeroCarousel() {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
         <div className="grain absolute inset-0 opacity-20" />
       </div>
 
-      {/* Content — image and text switch instantly with each slide */}
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-6 pt-24 sm:px-6 sm:pb-12 sm:pt-32 md:px-8 lg:px-10 lg:pb-14">
+      {/* Content — lower left, above background */}
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-6 pt-20 sm:px-6 sm:pb-12 sm:pt-32 md:px-8 lg:px-10 lg:pb-14">
         <div className="relative max-w-2xl">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-x-6 -inset-y-8 rounded-3xl bg-gradient-to-t from-black/70 via-black/40 to-transparent sm:-inset-x-10"
-          />
-          <div className="hero-slide-text relative">
-            <p className="label-luxury text-accent-light">{slide.region}</p>
-
-            <h1 className="headline-editorial mt-3 text-[2.25rem] leading-[1.05] text-foreground-light sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem]">
+          <div className="hero-slide-text">
+            <h1 className="headline-editorial text-[2rem] leading-[1.05] text-white sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem]">
               {slide.headline} <em>{slide.headlineEm}</em>
             </h1>
 
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">
+            <p className="mt-4 hidden max-w-lg text-sm leading-relaxed text-white/90 sm:block sm:text-base">
               {slide.description}
             </p>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
-          <Button href="/properties" variant="secondary" size="lg">
+        <div className="relative z-10 mt-5 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap">
+          <Button
+            href="/properties"
+            variant="glass"
+            size="lg"
+            className="w-full sm:w-auto sm:border-accent/20 sm:bg-accent sm:text-primary sm:shadow-lg sm:shadow-accent/25 sm:hover:bg-accent-light sm:hover:shadow-xl sm:hover:-translate-y-0.5"
+          >
             Browse Listings
           </Button>
-          <Button href="/book-viewing" variant="glass" size="lg">
-            Book a Viewing
-          </Button>
+          <div className="hidden sm:contents">
+            <Button href="/book-viewing" variant="glass" size="lg">
+              Book a Viewing
+            </Button>
+          </div>
         </div>
 
         {/* Controls */}
-        <div className="mt-10 flex items-center gap-2">
+        <div className="relative z-10 mt-8 flex items-center gap-2 sm:mt-10">
           {heroSlides.map((item, index) => (
             <button
               key={item.id}
