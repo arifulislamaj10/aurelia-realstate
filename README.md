@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PropFlow — Real Estate Lead Generation Demo
+
+A portfolio demo website built to showcase real estate agency capabilities: property listings, lead capture, AI inquiry assistant, and viewing bookings.
+
+**Built by:** [Ariful Islam](https://www.linkedin.com/in/arifulislam10111999)
+
+## Why This Project?
+
+LinkedIn profile positioning: *Helping Real Estate Agencies and Brokerages Build Lead Generating Websites*
+
+This demo maps directly to the customer journey:
+
+```
+Website Visitor → Lead → Qualification → Follow-up → Property Viewing
+```
+
+## Features
+
+- **Property Listings** — Searchable catalog with filters (type, status, beds, location)
+- **Property Detail Pages** — Photo galleries, amenities, agent info
+- **Lead Capture Forms** — Buyer, seller, and general inquiry flows
+- **Viewing Booking** — Date/time selection with property picker
+- **AI Inquiry Assistant** — Chat widget for lead qualification (demo)
+- **Mobile-Responsive** — Optimized for all screen sizes
+- **Modern UI** — Navy + gold real estate aesthetic
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS 4
+- Lucide React icons
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx vercel
+```
 
-## Learn More
+Or connect the GitHub repo to Vercel for automatic deployments.
 
-To learn more about Next.js, take a look at the following resources:
+## LinkedIn Post Ideas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Project launch** — Share the live demo with screenshots of the customer journey section
+2. **Feature spotlight** — "Why viewing booking matters for real estate agencies"
+3. **Before/after** — Generic agency site vs. conversion-focused PropFlow approach
+4. **Technical post** — Performance, Next.js architecture, mobile-first design
+5. **AI assistant** — How AI qualifies leads before agents spend time on unqualified inquiries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Demo project for portfolio purposes.

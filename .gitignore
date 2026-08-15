@@ -19,7 +19,7 @@
 
 # production
 /build
-
+/AGENTS.md
 # misc
 .DS_Store
 *.pem
