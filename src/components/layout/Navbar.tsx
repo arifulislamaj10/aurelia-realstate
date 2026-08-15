@@ -80,8 +80,11 @@ export function Navbar() {
         )}
       >
         <div className="flex items-center justify-between gap-3 px-3 py-2.5 sm:gap-4 sm:px-4 sm:py-3 lg:px-5">
-          {/* Logo */}
-          <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+          {/* Logo — flex-1 + min-w-0 on mobile so long text truncates and hamburger stays visible */}
+          <Link
+            href="/"
+            className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden sm:gap-3 md:flex-none"
+          >
             <div
               className={cn(
                 "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border sm:h-10 sm:w-10",
@@ -92,22 +95,23 @@ export function Navbar() {
             >
               <span className="font-display text-base font-semibold leading-none sm:text-lg">A</span>
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 overflow-hidden">
               <span
                 className={cn(
-                  "block truncate font-display text-lg font-medium leading-tight sm:text-xl",
+                  "block truncate font-display text-base font-medium leading-tight sm:text-lg md:text-xl",
                   overHero ? "text-foreground-light" : "text-primary"
                 )}
               >
-              {agency.name}
-            </span>
-            <p
-              className={cn(
-                "label-luxury truncate text-[0.6rem] sm:text-[0.6875rem]",
-                overHero ? "text-white/45" : "text-muted"
-              )}
-            >
-              {agency.tagline}
+                <span className="sm:hidden">{agency.shortName}</span>
+                <span className="hidden sm:inline">{agency.name}</span>
+              </span>
+              <p
+                className={cn(
+                  "label-luxury hidden truncate text-[0.6875rem] sm:block",
+                  overHero ? "text-white/45" : "text-muted"
+                )}
+              >
+                {agency.tagline}
               </p>
             </div>
           </Link>
