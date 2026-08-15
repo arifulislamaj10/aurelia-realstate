@@ -182,10 +182,28 @@ body {
     0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
+.hero-bg-image {
+  object-position: center 32%;
+}
+
+@media (min-width: 640px) {
+  .hero-bg-image {
+    object-position: center;
+  }
+}
+
 .hero-bg-zoom {
   animation: hero-zoom 30s ease-in-out infinite alternate;
   image-rendering: -webkit-optimize-contrast;
   filter: contrast(1.05) saturate(1.08);
+}
+
+@media (max-width: 639px) {
+  .hero-bg-zoom {
+    animation: none;
+    transform: scale(1.03);
+    filter: contrast(1.04) saturate(1.06);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

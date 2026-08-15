@@ -31,7 +31,7 @@ export function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-[100dvh] overflow-hidden">
+    <section className="relative h-[min(72dvh,36rem)] min-h-[26rem] overflow-hidden sm:h-[100dvh] sm:min-h-0">
       {/* Background slides — fixed full-viewport layers for stable height */}
       <div className="absolute inset-0 h-full w-full">
         {heroSlides.map((item, index) => (
@@ -50,7 +50,7 @@ export function HeroCarousel() {
               priority
               quality={95}
               sizes="100vw"
-              className="hero-bg-zoom object-cover object-center"
+              className="hero-bg-zoom hero-bg-image object-cover"
             />
           </div>
         ))}
@@ -60,7 +60,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Content — image and text switch instantly with each slide */}
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-8 pt-28 sm:px-6 sm:pb-12 sm:pt-32 md:px-8 lg:px-10 lg:pb-14">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-6 pt-24 sm:px-6 sm:pb-12 sm:pt-32 md:px-8 lg:px-10 lg:pb-14">
         <div className="relative max-w-2xl">
           <div
             aria-hidden
